@@ -13,6 +13,9 @@ var Conveyor = /** @class */ (function () {
     Conveyor.prototype.setInterior = function () {
         console.log('Exterior added!');
     };
+    Conveyor.prototype.getInterior = function () {
+        console.log('Exterior!');
+    };
     Conveyor.prototype.changeInterior = function () {
         console.log('Update interior!');
     };
@@ -43,7 +46,17 @@ var ConveyorFacade = /** @class */ (function () {
         this.car.addElectronics();
         this.car.paint();
     };
+    ConveyorFacade.prototype.changeEngine = function () {
+        this.car.getEngine();
+        this.car.setEngine();
+    };
+    ConveyorFacade.prototype.changeInterior = function () {
+        this.car.getInterior();
+        this.car.setInterior();
+    };
     return ConveyorFacade;
 }());
 var conveyor = new ConveyorFacade(new Conveyor());
 conveyor.assembleCar();
+conveyor.changeEngine();
+conveyor.changeInterior();

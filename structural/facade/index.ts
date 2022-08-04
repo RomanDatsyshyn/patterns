@@ -14,6 +14,10 @@ class Conveyor {
 
 	setInterior() {
 		console.log('Exterior added!');
+    }
+    
+    getInterior() {
+		console.log('Exterior!');
 	}
 
 	changeInterior() {
@@ -52,8 +56,20 @@ class ConveyorFacade {
 		this.car.setWheels();
 		this.car.addElectronics();
 		this.car.paint();
-	}
+    }
+    
+    changeEngine() {
+        this.car.getEngine();
+        this.car.setEngine();
+    }
+
+    changeInterior() {
+        this.car.getInterior();
+        this.car.setInterior();
+    }
 }
 
 const conveyor = new ConveyorFacade(new Conveyor());
 conveyor.assembleCar();
+conveyor.changeEngine();
+conveyor.changeInterior();
