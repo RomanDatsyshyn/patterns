@@ -1,72 +1,71 @@
 class Conveyor {
+  setBody() {
+    console.log("Body set!");
+  }
 
-	setBody() {
-		console.log('Body set!');
-	}
+  getEngine() {
+    console.log("Dismantle Engine!");
+  }
 
-	getEngine() {
-        console.log('Dismantle Engine!');
-    }
+  setEngine() {
+    console.log("Engine set!");
+  }
 
-	setEngine() {
-		console.log('Engine set!');
-	}
+  setInterior() {
+    console.log("Exterior added!");
+  }
 
-	setInterior() {
-		console.log('Exterior added!');
-    }
-    
-    getInterior() {
-		console.log('Exterior!');
-	}
+  getInterior() {
+    console.log("Exterior!");
+  }
 
-	changeInterior() {
-		console.log('Update interior!');
-	}
+  changeInterior() {
+    console.log("Update interior!");
+  }
 
-	setExterior() {
-		console.log('Added interior!');
-	}
+  setExterior() {
+    console.log("Added interior!");
+  }
 
-	setWheels() {
-		console.log('Wheels!');
-	}
+  setWheels() {
+    console.log("Wheels!");
+  }
 
-	addElectronics() {
-		console.log('Added electronics!');
-	}
+  addElectronics() {
+    console.log("Added electronics!");
+  }
 
-	paint() {
-		console.log('Car painted!');
-	}
+  paint() {
+    console.log("Car painted!");
+  }
 }
 
 class ConveyorFacade {
-    car: any;
+  car: any;
 
-	constructor(car:Conveyor) {
-		this.car = car;
-	}
+  constructor(car: Conveyor) {
+    this.car = car;
+  }
 
-	assembleCar() {
-		this.car.setBody();
-		this.car.setEngine();
-		this.car.setInterior();
-		this.car.setExterior();
-		this.car.setWheels();
-		this.car.addElectronics();
-		this.car.paint();
-    }
-    
-    changeEngine() {
-        this.car.getEngine();
-        this.car.setEngine();
-    }
+  assembleCar() {
+    this.car.setBody();
+    this.car.setEngine();
+    this.car.setInterior();
+    this.car.setExterior();
+    this.car.setWheels();
+    this.car.addElectronics();
+    this.car.paint();
+  }
 
-    changeInterior() {
-        this.car.getInterior();
-        this.car.setInterior();
-    }
+  changeEngine() {
+    this.car.getEngine();
+    this.car.setEngine();
+  }
+
+  changeInterior() {
+    this.car.getInterior();
+    this.car.setInterior();
+  }
 }
 
 const conveyor = new ConveyorFacade(new Conveyor());
